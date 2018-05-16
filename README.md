@@ -2,13 +2,13 @@
 Automated Docker to Create/Run Rails Application
 
 Description
-
+```
   1) Create a rails Application using docker.
   2) Provide dynamic project name
   3) Flexible to run the application in any mode 
   4) Volume mapped Project
   5) Volume mapped Gems
-
+```
 Steps
 ```
   1) Create a rails Project 
