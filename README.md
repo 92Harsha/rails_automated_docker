@@ -10,7 +10,7 @@ Description
   5) Volume mapped Gems
 
 Steps
-
+```
   1) Create a rails Project 
   
      ./start_application.sh APP_NAME
@@ -28,3 +28,4 @@ Steps
      ./start_application.sh APP_NAME RAILS_ENV CODE_CHANGED
 
      Example: ./start_application.sh article development code_changed
+```
