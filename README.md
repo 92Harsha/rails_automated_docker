@@ -1,4 +1,4 @@
-# rails_automated_docker
+# Rails Automated Docker
 Automated Docker to Create/Run Rails Application
 
 Description
