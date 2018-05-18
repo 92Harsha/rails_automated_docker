@@ -5,7 +5,7 @@ export set RAILS_ENV=$RAILS_ENV
 
 if ! gem list rails -i ; then
   echo ">>>>>>>>>>>>Installing Rails..."
-  gem install rails
+  gem install rails -v '5.1.6'
 
   if [ ! -f $APP_NAME/app ]
   then
@@ -36,9 +36,9 @@ fi
 if [ $RAILS_ENV = 'development' ]
 then
    echo ">>>>>>>>>>>>Starting application server..."
-   bundle exec rails s -b 0.0.0.0 -p 3001 -e development
+   bundle exec rails s -b 0.0.0.0 -p $APP_PORT -e development
 elif [ $RAILS_ENV = 'production' ]
 then
    echo ">>>>>>>>>>>>Starting application server..."
-   bundle exec rails s -b 0.0.0.0 -p 3001 -e production
+   bundle exec rails s -b 0.0.0.0 -p $APP_PORT -e production
 fi
