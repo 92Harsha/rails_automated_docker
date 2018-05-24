@@ -1,15 +1,32 @@
 FROM ruby:2.5
 
 RUN apt-get update
-RUN apt-get install -y nodejs
 
-EXPOSE 3000
+RUN useradd -m -s /bin/bash app
+
+RUN apt-get update && apt-get install -y less nano wget telnet nodejs
+
+
+
+ENV GEM_HOME /usr/local/bundle
+ENV PATH $GEM_HOME/bin:$PATH
+RUN gem install bundler \
+	&& bundle config --global path "$GEM_HOME" \
+	&& bundle config --global bin "$GEM_HOME/bin"
+
+
+#RUN apt-get update && apt-get install rails -v 5.1.0
+
+RUN gem install rails -v '5.1.6'
 
 WORKDIR /opt/$APP_NAME
 
 COPY init.sh /init.sh
 RUN chmod 755 /init.sh
 
+EXPOSE 3000
+
+#CMD ["irb"]
 CMD ["/init.sh"]
 
-
+RUN echo "Docker builded..................."
